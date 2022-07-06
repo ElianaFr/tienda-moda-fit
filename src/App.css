@@ -1,3 +1,18 @@
+.icono-menu{
+  border:none;
+}
+.icono-menu:focus{
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }

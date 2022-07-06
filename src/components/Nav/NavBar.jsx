@@ -1,12 +1,19 @@
-import LogoMf from './logo';
+import LogoMf from "./LogoMf";
+import MenuMf from "./Menu";
+import "./navBar.css";
+
+
 const NavBar = () => {
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-                <span className= "pr-2">MODA FIT</span>
-                <LogoMf/>
+        <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
+            <div className="container">
+                <span className= "pe-2">  <img src="../Nav/logoMf.png" style={{width:40, height:40}}></img> MODA FIT
+                </span>
+                {/* <LogoMf /> */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon ">
+                        <MenuMf />
+                    </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">

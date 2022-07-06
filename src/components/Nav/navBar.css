@@ -1,0 +1,26 @@
+/* ICONO MENU HAMBURGUESA */
+
+.container button{
+    border:none;
+}
+.container button:focus{
+    box-shadow: none;
+}
+
+/* BARRA NAVEGACION */
+.nav-item a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 1px;
+    padding-right: 8px;
+}
+.nav-item a:hover{
+    color:rgb(138, 138, 234);
+    border-bottom: solid 1px rgb(173, 65, 65); 
+}
+
+
+
