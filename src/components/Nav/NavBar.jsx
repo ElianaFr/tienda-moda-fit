@@ -1,6 +1,7 @@
 import LogoMf from "./LogoMf";
 import MenuMf from "./Menu";
 import "./navBar.css";
+import Cart from "./CartWidget";
 
 
 const NavBar = () => {
@@ -11,14 +12,14 @@ const NavBar = () => {
                 </span>
                 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler">
+                    <span className="">
                         <MenuMf />
                     </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav  mt-1 mb-2 mb-lg-0">
+                    <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">PRODUCTOS</a>
+                            <a className="nav-link" aria-current="page" href="#">PRODUCTOS</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">REMERAS</a>
@@ -34,6 +35,7 @@ const NavBar = () => {
                         </li>
                         
                     </ul>
+                    <Cart/>
                 </div>
             </div>
         </nav>
