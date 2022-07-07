@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+/* PROMO COMPONENTE */
+.truck{
+    color: white;
+    font-size: 15px
+}
+.txtPromo{
 
+    color: white;
+    font-size: 12px;
+}
 
 /* ICONO MENU HAMBURGUESA */
 
