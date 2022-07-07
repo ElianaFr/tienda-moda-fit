@@ -1,6 +1,6 @@
 const LogoMf = () => {
     return (
-        <img src="../Nav/logoMf" style={{width:60, height:60}}></img>
+        <img src="../assets/img/logoMf.png" style={{width:40, height:40}}></img>
     );
 };
 

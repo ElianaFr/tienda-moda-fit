@@ -1,6 +1,6 @@
 const MenuMf = () => {
     return (
-        <img src="../components/Nav/menu.png" style={{width:40, height:40}}></img>
+        <img src="./assets/img/menu.png" style={{width:40, height:40}}></img>
     );
 };
 
