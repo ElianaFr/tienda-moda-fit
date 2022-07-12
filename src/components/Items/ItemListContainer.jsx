@@ -1,7 +1,10 @@
 const ItemListContainer = (prop) => {
     return ( 
-        <div>
-            <p>{prop.saludo}</p>
+        <div className="container px-5 py-8 mx-auto" >
+            <div className="flex flex-col text-center mb-12">
+                <p>{prop.saludo}</p>
+            </div>
+            
         </div>
         
     );
