@@ -11,8 +11,8 @@ function App() {
     <>
       <Promo promo={"HASTA 6 CUOTAS SIN INTERES, ENVIO GRATIS DESDE $10000.-"}/>
       <NavBar />
-      <ItemListContainer saludo={"PROXIMAMENTE ARTICULOS"}/>
-      <ItemCount stock={10} initial={1} />
+      <ItemListContainer />
+      {/* <ItemCount stock={10} initial={1} /> */}
     </>
 
     
