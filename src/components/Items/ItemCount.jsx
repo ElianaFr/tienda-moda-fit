@@ -13,9 +13,9 @@ function ItemCount(props){
     }
 
     return(
-        <div className="container px-5 py-8 mx-auto">
-            <div className="flex flex-col text-center mb-12">
-                <span>SELECTOR DE CANTIDAD</span>
+        // <div className="container px-5 py-8 mx-auto">
+            // <div className="flex flex-col text-center mb-12">
+                // <span>SELECTOR DE CANTIDAD</span>
                 <div>
                     <div className="pb-4 pt-2">
                         <button onClick={handleResta} type="button" className="btn btn-secondary btn-sm m-1 pt-1 pb-1">-</button>
@@ -25,10 +25,10 @@ function ItemCount(props){
                     <div>
                         <button type="button" className="btn btn-success btn-sm" >Agregar al carrito</button>
                     </div>
-                </div>
-            </div>
+                </div> 
+            // </div> 
 
-        </div>
+        // </div>
     )
 
 
