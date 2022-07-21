@@ -16,8 +16,9 @@ const ItemListContainer = () =>{
     console.log(categoria)
 
     const [productos,setItems] = useState ([]);
+
     useEffect(()=> {
-        
+            
         console.log("se vuelve a ejecutar")
         
         getItem().then((res) => {
@@ -38,6 +39,7 @@ const ItemListContainer = () =>{
     return(
         <>
         <ItemList productos = {productos}/>
+        
         </>
     )
 }

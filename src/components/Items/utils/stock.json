@@ -4,8 +4,8 @@
     "product": "Remera Deportiva",
     "price": 3600,
     "stock": 5,
-    "categoria": "Remera",
-    "imagen": "./assets/img/top deportivo.jpg",
+    "category": "Remera",
+    "imagen": "../assets/img/top deportivo.jpg",
     "info": "Remera manga corta 100% algodon lisa."
 },
 {
@@ -14,7 +14,7 @@
     "price": 2300,
     "stock": 25,
     "category": "Tops",
-    "imagen": "./assets/img/top deportivo.jpg",
+    "imagen": "../assets/img/top deportivo.jpg",
     "info": "100% poliéster"
 
 },
@@ -24,7 +24,7 @@
     "price": 4200,
     "stock": 10,
     "category": "Calza",
-    "imagen": "./assets/img/top deportivo.jpg",
+    "imagen": "../assets/img/top deportivo.jpg",
     "info": "50% algodón - 50% poliéster"
 },
 {
@@ -33,7 +33,7 @@
     "price": 3600,
     "stock": 18,
     "category": "Calza",
-    "imagen": "./assets/img/top deportivo.jpg",
+    "imagen": "../assets/img/top deportivo.jpg",
     "info": "calza corta 50% algodón - 50% poliéster"
 },
 {
@@ -42,6 +42,6 @@
     "price": 2800,
     "stock": 17,
     "category": "Short",
-    "imagen": "./assets/img/top deportivo.jpg",
+    "imagen": "../assets/img/top deportivo.jpg",
     "info": "90% Poliamida. - 10% Elastano"
 }]

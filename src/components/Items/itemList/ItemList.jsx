@@ -2,7 +2,7 @@ import Item from "../item/Item";
 
 
 const ItemList  =({productos}) => {
-
+console.log("info productos itemlist",productos)
     return (
         <>
             <p className="text-center">PRODUCTOS</p>

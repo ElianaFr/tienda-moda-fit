@@ -16,13 +16,11 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer />}/>
+        <Route path='*' element= {<h1 className='text-center'> ERROR 404-Página no encontrada</h1>}/>
         <Route path='/category/:categoria' element={<ItemListContainer />}/>
-        <Route path='/detail' element={<ItemDetailContainer/>}/>
-        <Route path='/' element={<ItemListContainer />}/>  
+        <Route path='item/:id' element={<ItemDetailContainer/>} />
       </Routes>
       
-      {/* <ItemListContainer /> */}
-      {/* <ItemDetailContainer /> */}
     </BrowserRouter>
     
     </>
