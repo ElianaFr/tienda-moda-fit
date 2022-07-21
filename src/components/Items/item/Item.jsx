@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Item = ({item}) => {
     
     return (
@@ -6,7 +8,10 @@ const Item = ({item}) => {
             <div className="card-body text-center">
                 <h5 className="card-title">{item.product} </h5>
                 <p className="card-text">$ {item.price} .-</p>
-                <button type="button" className="btn btn-success fw-bold">DETALLE</button>
+                <Link to="/detail">
+                    <button type="button" className="btn btn-success fw-bold">DETALLE</button>
+                </Link>
+                {/* <button type="button" className="btn btn-success fw-bold">DETALLE</button> */}
             </div>
         </div>
         

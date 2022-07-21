@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import ItemDetail from "./ItemDetail";
+import ItemDetail from "../itemDetail/ItemDetail";
 import stock from "../utils/stock.json"
 
 function getItem(){

@@ -1,4 +1,4 @@
-import ItemCount from "../ItemCount";
+import ItemCount from "../itemCount/ItemCount";
 const ItemDetail = ({productos}) => {
     console.log("data de la promesa", productos)
     return (
