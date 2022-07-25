@@ -13,22 +13,20 @@ function ItemCount(props){
     }
 
     return(
-        // <div className="container px-5 py-8 mx-auto">
-            // <div className="flex flex-col text-center mb-12">
-                // <span>SELECTOR DE CANTIDAD</span>
                 <div>
                     <div className="pb-4 pt-2">
                         <button onClick={handleResta} type="button" className="btn btn-secondary btn-sm m-1 pt-1 pb-1">-</button>
                         <span className="p-4">{count}</span>
                         <button onClick={handleSuma} type="button" className="btn btn-primary btn-sm m-1 pt-1 pb-1">+</button>
                     </div>
-                    <div>
+                    <div className="mb-2">
                         <button type="button" className="btn btn-success btn-sm" >Agregar al carrito</button>
                     </div>
+                    <div>
+                        <button type="button" className="btn btn-primary btn-sm" >Finalizar compra</button>
+                    </div>
                 </div> 
-            // </div> 
-
-        // </div>
+            
     )
 
 
