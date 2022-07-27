@@ -4,10 +4,10 @@ import ItemListContainer from './components/Items/itemListContainer/ItemListCont
 import Promo from './components/Nav/promo/Promo';
 import ItemDetailContainer from "./components/Items/itemDetailContainer/ItemDetailContainer"
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
-
+// import { useState } from 'react';
 
 function App() {
-  
+  // const [cantidadItems,setCantidadItems]= useState(0)
   return (
     <>
 

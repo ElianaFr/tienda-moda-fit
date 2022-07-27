@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({productos}) => {
     console.log("data de la promesa de itemdetailcontainer", productos)
+    
     const {id,product, price, stock, category, imagen, info}= productos
+    
     const [cantidad,setCantidad] = useState(0)
     
     const onAdd= () => {
         console.log("productos a agregar",productos);
         console.log("cantidad",cantidad)
+        setCantidad(cantidad)
     };
     return (
         <div className="container mb-5">
@@ -25,10 +28,12 @@ const ItemDetail = ({productos}) => {
                     <ItemCount stock={stock} initial={0} actualizarCant={setCantidad} />  
                     
                     <div className="mb-2">
+                    {(cantidad > 0) &&
                     <Link to="/cart"><button type="button" className="btn btn-primary btn-sm" onClick={onAdd} > 
-                     Finalizar compra
-                            </button> 
-                            </Link>
+                    Finalizar compra
+                    </button> 
+                    </Link>
+                    }
                         
                     </div>
                 </div>
