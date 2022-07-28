@@ -12,7 +12,8 @@ const ItemDetail = ({productos}) => {
     const [cantidad,setCantidad] = useState(0)
     
     const onAdd= (cantidad) => {
-        setCantidad(cantidad)
+        setCantidad(cantidad);
+        
         console.log("productos a agregar",productos);
         console.log("cantidad",cantidad)
         toast.success(`🚀 ${cantidad} productos se agregaron al carrito`, {
@@ -25,19 +26,20 @@ const ItemDetail = ({productos}) => {
             progress: undefined,
             theme: "dark",
             });
-        
-
     };
+
     return (
         <div className="container mb-5">
             <p className="text-center fs-5">DETALLE DEL PRODUCTO</p>
             <div className="card shadow" style={{width: 250}}>
                 <img src={imagen} className="card-img-top p-2" alt="..."/>
                 <div className="card-body text-center">
-                    <span>{id}</span>
+                    <span style={{fontSize:6}}> CP: {id}</span>
+                    <p className="card-title"> Cantidad seleccionada : {cantidad}</p>
                     <h5 className="card-title">{product} </h5>
                     <p className="card-text">$ {price} .-</p>
                     <p className="card-text"> {info}</p>
+                    
                     {cantidad == 0 ? (
                         <ItemCount stock={stock} initial={0} onAdd={onAdd} />) :
                         (<ToastContainer></ToastContainer>)

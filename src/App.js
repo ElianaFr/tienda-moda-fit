@@ -7,7 +7,8 @@ import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 // import { useState } from 'react';
 
 function App() {
-  // const [cantidadItems,setCantidadItems]= useState(0)
+  
+  
   return (
     <>
 
