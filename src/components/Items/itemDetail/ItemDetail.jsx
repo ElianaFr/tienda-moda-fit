@@ -3,19 +3,26 @@ import ItemCount from "../itemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
-const ItemDetail = ({productos}) => {
-    console.log("data de la promesa de itemdetailcontainer", productos)
+const ItemDetail = ({productos,props}) => {
     
     const {id,product, price, stock, category, imagen, info}= productos
-    
+
     const [cantidad,setCantidad] = useState(0)
+    
+    const {setCartItems} = useContext(CartContext);
+    
     
     const onAdd= (cantidad) => {
         setCantidad(cantidad);
-        
+        setCartItems(props.item,cantidad)
         console.log("productos a agregar",productos);
         console.log("cantidad",cantidad)
+        
+        
+
         toast.success(`🚀 ${cantidad} productos se agregaron al carrito`, {
             position: "bottom-center",
             autoClose: 1500,
@@ -27,7 +34,7 @@ const ItemDetail = ({productos}) => {
             theme: "dark",
             });
     };
-
+    
     return (
         <div className="container mb-5">
             <p className="text-center fs-5">DETALLE DEL PRODUCTO</p>
@@ -48,7 +55,7 @@ const ItemDetail = ({productos}) => {
                     
                     <div className="mb-2">
                     {(cantidad > 0) &&
-                    <Link to="/cart"><button type="button" className="btn btn-primary btn-sm"> 
+                    <Link to="/cart"><button type="button" className="btn btn-primary btn-sm" > 
                     Finalizar compra
                     </button> 
                     </Link>

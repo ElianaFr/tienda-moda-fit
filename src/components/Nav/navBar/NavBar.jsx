@@ -1,8 +1,8 @@
 import LogoMf from "../logo/LogoMf";
 import MenuMf from "../menu/Menu";
 import "./navBar.css";
-import Cart from "../cartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
     return ( 
@@ -36,7 +36,7 @@ const NavBar = () => {
                         </li>
                         
                     </ul>
-                    <Cart />
+                    <CartWidget/>
                 </div>
             </div>
         </nav>

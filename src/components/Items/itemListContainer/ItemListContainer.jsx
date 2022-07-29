@@ -17,7 +17,7 @@ const ItemListContainer = () =>{
     const {categoria} = useParams();
     console.log(categoria)
     const [loading,setLoading] = useState(false);
-    const [productos,setItems] = useState ([]);
+    const [productos,setProductos] = useState ([]);
 
     useEffect(()=> {
         setLoading(true)
@@ -28,10 +28,10 @@ const ItemListContainer = () =>{
             console.log("respuesta de la promesa",itemProd)
         
             if(categoria){
-                setItems(itemProd.filter((elemento) => elemento.category == categoria))
+                setProductos(itemProd.filter((e) => e.category == categoria))
                 console.log("array filtrado",itemProd)
             }else{
-                setItems(itemProd)
+                setProductos(itemProd)
             }
             setLoading(false)
         });

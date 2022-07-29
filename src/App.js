@@ -4,26 +4,29 @@ import ItemListContainer from './components/Items/itemListContainer/ItemListCont
 import Promo from './components/Nav/promo/Promo';
 import ItemDetailContainer from "./components/Items/itemDetailContainer/ItemDetailContainer"
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
-// import { useState } from 'react';
+import CartProvider from './components/contexts/CartContext';
+import Cart from './components/compra/Cart';
 
 function App() {
   
   
   return (
     <>
-
-    <BrowserRouter>
-      <Promo promo={"HASTA 6 CUOTAS SIN INTERES, ENVIO GRATIS DESDE $10000.-"}/>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer />}/>
-        <Route path='*' element= {<h1 className='text-center'> ERROR 404-Página no encontrada</h1>}/>
-        <Route path='/category/:categoria' element={<ItemListContainer />}/>
-        <Route path='item/:id' element={<ItemDetailContainer/>} />
-      </Routes>
+      <CartProvider>
       
-    </BrowserRouter>
-    
+        <BrowserRouter>
+          <Promo promo={"HASTA 6 CUOTAS SIN INTERES, ENVIO GRATIS DESDE $10000.-"}/>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer />}/>
+            <Route path='*' element= {<h1 className='text-center'> ERROR 404-Página no encontrada</h1>}/>
+            <Route path='/category/:categoria' element={<ItemListContainer />}/>
+            <Route path='item/:id' element={<ItemDetailContainer/>} />
+            <Route path= '/cart' element={<Cart/>}/>
+          </Routes>
+          
+        </BrowserRouter>
+      </CartProvider>
     </>
 
     
