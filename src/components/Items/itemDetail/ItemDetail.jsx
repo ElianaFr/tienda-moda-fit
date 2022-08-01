@@ -12,17 +12,12 @@ const ItemDetail = ({productos,props}) => {
 
     const [cantidad,setCantidad] = useState(0)
     
-    const {setCartItems} = useContext(CartContext);
+    const {addItem} = useContext(CartContext);
     
     
     const onAdd= (cantidad) => {
         setCantidad(cantidad);
-        setCartItems(props.item,cantidad)
-        console.log("productos a agregar",productos);
-        console.log("cantidad",cantidad)
-        
-        
-
+        addItem(productos,cantidad);
         toast.success(`🚀 ${cantidad} productos se agregaron al carrito`, {
             position: "bottom-center",
             autoClose: 1500,
@@ -34,6 +29,7 @@ const ItemDetail = ({productos,props}) => {
             theme: "dark",
             });
     };
+    
     
     return (
         <div className="container mb-5">
@@ -55,7 +51,8 @@ const ItemDetail = ({productos,props}) => {
                     
                     <div className="mb-2">
                     {(cantidad > 0) &&
-                    <Link to="/cart"><button type="button" className="btn btn-primary btn-sm" > 
+                    <Link to="/cart">
+                        <button type="button" className="btn btn-primary btn-sm"> 
                     Finalizar compra
                     </button> 
                     </Link>
