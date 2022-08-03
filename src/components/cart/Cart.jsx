@@ -17,7 +17,7 @@ const Cart = () => {
             <>
                 <h1>UPS!! PARECE QUE NO HAY PRODUCTOS</h1>
             <Link to="/">
-                <button className="btn btn-primary m-5">VOLVER</button>
+                <button className="btn btn-primary m-5">HOME</button>
             </Link>
             </>
         ) : (
