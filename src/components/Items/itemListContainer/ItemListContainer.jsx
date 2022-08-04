@@ -3,38 +3,30 @@ import ItemList from "../itemList/ItemList";
 import stock from "../utils/stock.json";
 import { useParams } from "react-router-dom";
 import Spinner from "../spinner/spinner";
+import {getFirestore,collection,getDocs,query,where} from "firebase/firestore"
 
 
-function getItem(){
-    return new Promise ((resolve)=>{
-        setTimeout(()=>{
-            resolve(stock)
-        },2000);
-    });
-}
 
 const ItemListContainer = () =>{
     const {categoria} = useParams();
-    console.log(categoria)
     const [loading,setLoading] = useState(false);
     const [productos,setProductos] = useState ([]);
 
+
     useEffect(()=> {
-        setLoading(true)
-        console.log("se vuelve a ejecutar")
+    
+        setLoading(true);
+        const dataBase = getFirestore();
+        const itemsCollection = collection(dataBase,"items");
+        const resCollection = categoria
+            ? query(itemsCollection,where("category","==",categoria)): itemsCollection;
+        getDocs(resCollection).then ((snapshot)=> {
+            const data= snapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()}));
+            setProductos(data);
+            setLoading(false);
+        }) ;
         
-        getItem().then((res) => {
-            const itemProd = res;
-            console.log("respuesta de la promesa",itemProd)
         
-            if(categoria){
-                setProductos(itemProd.filter((e) => e.category == categoria))
-                console.log("array filtrado",itemProd)
-            }else{
-                setProductos(itemProd)
-            }
-            setLoading(false)
-        });
     },[categoria]);
     
     if (loading) return <Spinner />;
@@ -47,4 +39,9 @@ const ItemListContainer = () =>{
 }
 
 export default ItemListContainer;
+
+
+
+
+
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({item}) => {
     const {id,product , price, stock, category, imagen, info} = item;
-    console.log("item info",item)
+    // console.log("item info",item)
     return (
         <div className="card shadow" style={{width: 200}}>
             <img src={imagen} className="card-img-top p-2" alt="..."/>

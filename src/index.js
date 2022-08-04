@@ -7,6 +7,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBx4PzwJF0OAkUpRGKzOeeZZeD3oe9r7DI",
+  authDomain: "tiendamodafit-85f4a.firebaseapp.com",
+  projectId: "tiendamodafit-85f4a",
+  storageBucket: "tiendamodafit-85f4a.appspot.com",
+  messagingSenderId: "762984632635",
+  appId: "1:762984632635:web:16492a702d17868623271e"
+};
+
+// Inicializar firebase
+const app = initializeApp(firebaseConfig);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
