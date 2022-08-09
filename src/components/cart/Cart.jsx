@@ -4,6 +4,8 @@ import { CartContext } from "../contexts/CartContext";
 import CartItem from "../cartItem/CartItem";
 import { Link } from "react-router-dom";
 
+
+
 const Cart = () => {
     const {cartItems,removeItem,clear,total,cantItems}= useContext(CartContext);
     const tot = total ();
@@ -30,8 +32,16 @@ const Cart = () => {
                 {cartItems.map((item) => {
                     return(<CartItem item={item.item} quantity = {item.quantity} clear={clear} removeItem={removeItem} />)
                 })}
-                
-                <h3 className=" mt-5"> TOTAL DE LA COMPRA : $ {tot}</h3>
+                <div className="container">
+                    <h3 className=" mt-5"> TOTAL DE LA COMPRA : $ {tot}</h3>
+                    <Link to="/orderDetail">
+                        <button type="button" className="btn btn-secondary mb-5" >COMPRAR</button>
+                    
+                    </Link>
+                    
+                </div>
+
+                {/* <h3 className=" mt-5"> TOTAL DE LA COMPRA : $ {tot}</h3> */}
 
             </div>
             </>
