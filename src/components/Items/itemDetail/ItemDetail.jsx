@@ -51,11 +51,21 @@ const ItemDetail = ({productos,props}) => {
                     
                     <div className="mb-2">
                     {(cantidad > 0) &&
-                    <Link to="/cart">
-                        <button type="button" className="btn btn-primary btn-sm"> 
-                    Finalizar compra
-                    </button> 
-                    </Link>
+                    <>
+                        <Link to="/cart">
+                            <button type="button" className="btn btn-primary btn-sm mb-3"> 
+                                Finalizar compra
+                            </button> 
+                        </Link>
+                        <Link to="/">
+                            <button type="button" className="btn btn-success btn-sm"> 
+                            Continuar comprando
+                        </button> 
+                        </Link>
+                    
+                    </>
+                    
+                
                     }
                         
                     </div>

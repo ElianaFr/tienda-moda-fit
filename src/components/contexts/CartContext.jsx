@@ -1,6 +1,8 @@
+import { collection, getFirestore } from "firebase/firestore";
 import React from "react";
 import { createContext } from "react";
 import { useState } from 'react';
+import { addDoc } from "firebase/firestore";
 
 
 export const CartContext = createContext();
@@ -9,6 +11,21 @@ const CartProvider = (prop) => {
     //se declara el useState como un array porque vamos a tener la seleccion
 
     const [cartItems,setCartItems]= useState([]);
+
+    // agregar orden de clientes
+    const sendOrder = (totalPrice,buyerData)=>{
+        const database = getFirestore();
+        const orderCollection = collection(database,"orders");
+        
+        const order = {items:cartItems,total:totalPrice,buyer:buyerData};
+        addDoc(orderCollection,order).then(res => 
+            {const refItem = res.id
+            console.log(refItem)
+            alert(`la orden ${refItem} se ha generado con exito`)
+            });
+        }
+    
+    
     // agregar producto
 
     const addItem= (item,quantity)=>{
@@ -36,16 +53,13 @@ const CartProvider = (prop) => {
         setCartItems(cartItems.filter((elemento) => elemento.item.id !== itemId))
     }
 
-    const total = ()=>{
-        return cartItems.reduce((valorAnterior,valorActual)=> valorAnterior + (valorActual.item.price * valorActual.quantity),0)
-    }
-
+    
     const cantItems = () => {
         return cartItems.reduce((valorAnterior,valorActual) => valorAnterior + valorActual.quantity,0)
     }
 
     return ( 
-        <CartContext.Provider value={{cartItems,setCartItems,addItem,clear,removeItem,total,cantItems}}>
+        <CartContext.Provider value={{cartItems,setCartItems,addItem,clear,removeItem,cantItems,sendOrder}}>
             {prop.children}
         </CartContext.Provider>
 

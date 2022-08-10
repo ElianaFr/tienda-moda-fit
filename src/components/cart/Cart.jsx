@@ -3,15 +3,41 @@ import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "../cartItem/CartItem";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 
 const Cart = () => {
-    const {cartItems,removeItem,clear,total,cantItems}= useContext(CartContext);
-    const tot = total ();
+    const [totalPrice,setTotalPrice]= useState(0);
+    
+    const {cartItems,removeItem,clear,cantItems,sendOrder}= useContext(CartContext);
+    
     console.log("carrito",cartItems);
 
+    const [formValue,setFormValue]= useState({
+        name:"",
+        phone: "",
+        email:"",
+    })
     
+    const handleSubmit =(e) => {
+                e.preventDefault()
+                console.log("prevent",formValue)
+                sendOrder(totalPrice,formValue)
+            }
+
+    const handleChange=(e)=>{
+        setFormValue({...formValue,[e.target.name]: e.target.value})
+    }
+    
+    useEffect(()=>{
+        let total = 0;
+        cartItems.forEach(({item,quantity})=>{
+            total += Number(item.price)* quantity;
+        });
+        setTotalPrice(total);
+    },[cartItems]);
 
     return ( 
         <>
@@ -33,15 +59,43 @@ const Cart = () => {
                     return(<CartItem item={item.item} quantity = {item.quantity} clear={clear} removeItem={removeItem} />)
                 })}
                 <div className="container">
-                    <h3 className=" mt-5"> TOTAL DE LA COMPRA : $ {tot}</h3>
-                    <Link to="/orderDetail">
-                        <button type="button" className="btn btn-secondary mb-5" >COMPRAR</button>
-                    
-                    </Link>
+                    <h3 className=" mt-5">{`TOTAL DE LA COMPRA : $ ${totalPrice}`} </h3>
                     
                 </div>
 
-                {/* <h3 className=" mt-5"> TOTAL DE LA COMPRA : $ {tot}</h3> */}
+                <form className="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
+                    <div className="col-sm-3">
+                        <input 
+                            type="text" 
+                            name="name"
+                            className="form-control m-2" 
+                            placeholder="Nombre"
+                            value={formValue.name}
+                            onChange={handleChange}
+                        />
+                        <input 
+                            type="number" 
+                            name="phone"
+                            className="form-control m-2" 
+                            placeholder="Celular"
+                            value={formValue.phone}
+                            onChange={handleChange}
+                        />
+                        <input 
+                            type="email" 
+                            name="email"
+                            value={formValue.email}
+                            className="form-control m-2" 
+                            placeholder="Email"
+                            onChange={handleChange}
+                        />
+                        <button 
+                            type="submit" 
+                            className="btn btn-secondary mt-4">ENVIAR PEDIDO
+                        </button>
+                    
+                    </div>
+                </form>
 
             </div>
             </>
