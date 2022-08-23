@@ -6,7 +6,7 @@ import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-body rounded ">
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 bg-body rounded ">
             <div className="container">
                 <span className= "logo">  <LogoMf /> MODA FIT</span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@ const NavBar = () => {
                         </li>
                         
                     </ul>
-                    <Link to="/cart">
+                    <Link to="/cart" className="text-decoration-none">
                         <CartWidget/>
                     </Link>
                     

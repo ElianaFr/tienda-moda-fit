@@ -1,11 +1,19 @@
 import Item from "../item/Item";
+import "../itemList/itemList.css";
 
 
 const ItemList  =({productos}) => {
-// console.log("info productos itemlist",productos)
+
     return (
         <>
-            <p className="text-center">PRODUCTOS</p>
+            <div className="flyer">
+                <img className="flyer" src="../assets/img/flyer.png" ></img>
+
+            </div>
+            <div className="tit">
+                <h3 className="text-center prod"> CATALOGO DE PRODUCTOS</h3>
+            </div>
+            
                 <div className="container mt-4">
                     <div className="row row-cols-1 row-cols-md-4 g-4 ">
                             

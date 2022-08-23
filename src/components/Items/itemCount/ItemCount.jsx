@@ -16,15 +16,15 @@ const ItemCount = ({initial= 0, stock, onAdd}) => {
     
 
     return(
-                <div>
-                    <div className="pb-4 pt-2">
-                        <button onClick={handleResta} type="button" className="btn btn-secondary btn-sm m-1 pt-1 pb-1">-</button>
+                <div className="col-md-6 mx-auto">
+                    <div className="pb-4 pt-2 ">
+                        <button onClick={handleResta} type="button" className="btn btn-danger btn-sm m-1 pt-1 pb-1 btnColor"> - </button>
                         <span className="m-2">{count}</span>
-                        <button onClick={handleSuma} type="button" className="btn btn-primary btn-sm m-1 pt-1 pb-1">+</button>
+                        <button onClick={handleSuma} type="button" className="btn btn-success btn-sm m-1 pt-1 pb-1"> + </button>
                     </div>
                     <div className="mb-2">
                         {(count >0)&&
-                        <button type="button" className="btn btn-success btn-sm" disabled={count === "" || count === 0} onClick ={() => {onAdd(count) }}  >Agregar al carrito</button>
+                        <button type="button" className="btn btn-info btn-sm " disabled={count === "" || count === 0} onClick ={() => {onAdd(count) }}  >Agregar al carrito</button>
                         
                         }
                         

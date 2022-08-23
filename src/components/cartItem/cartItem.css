@@ -1,0 +1,12 @@
+.listaIn{
+    list-style-type: none;
+    
+}
+.lista{
+    display: inline;
+    float:left;
+    text-align: justify;
+    width: 12em;
+    margin-bottom: 6px;
+    
+}

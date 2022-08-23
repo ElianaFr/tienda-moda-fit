@@ -1,24 +1,24 @@
 import React from "react";
+import "../cartItem/cartItem.css"
 
 const CartItem = ({item,quantity,removeItem}) => {
     const {id,product , price, stock, category, imagen, info,} = item;
     
     return (
-        <div className="container" key={id}>
-            <div className="card shadow" style={{width: 250}} >
-            <div className="card-body text-center">
-                <span style={{fontSize:6}}> CP: {id} </span>         
-                <p className="card-title"> Cantidad seleccionada :{quantity}</p>
-                <h5 className="card-title">{product}</h5>
-                <p className="card-text">$ {price} .-</p>
-                <p className="card-text"> TOTAL $ {quantity*price} .-</p>
-                <button type="button" className="btn btn-danger" onClick={()=> removeItem(item.id)}>ELIMINAR</button>
-
-            </div>
-            </div>
-            
+        <div  key={id}>
+            <ul className="listaIn ">
+                
+                <li className="lista mb-3">{product}</li>
+                <li className="lista ms-4 ps-5 ">${price}.-</li>
+                <li className="lista ms-4 ps-5">{quantity}</li>
+                <li className="lista ms-4 ps-5">${quantity*price}.-</li>
+                <li className="lista ms-4 ps-5">
+                    <button type="button" className="btn btn-danger" onClick={()=> removeItem(item.id)}>
+                        <i className="bi bi-trash3-fill"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
-        
         
     );
 }

@@ -3,6 +3,9 @@ import React from "react";
 import { createContext } from "react";
 import { useState } from 'react';
 import { addDoc } from "firebase/firestore";
+import swal from 'sweetalert';
+
+
 
 
 export const CartContext = createContext();
@@ -11,20 +14,32 @@ const CartProvider = (prop) => {
     //se declara el useState como un array porque vamos a tener la seleccion
 
     const [cartItems,setCartItems]= useState([]);
+    
 
     // agregar orden de clientes
     const sendOrder = (totalPrice,buyerData)=>{
+        const time = Date.now();
+        const fecha = new Date(time); 
+
         const database = getFirestore();
         const orderCollection = collection(database,"orders");
         
-        const order = {items:cartItems,total:totalPrice,buyer:buyerData};
+        const order = {items:cartItems,total:totalPrice,buyer:buyerData,fecha};
         addDoc(orderCollection,order).then(res => 
+            
+            
             {const refItem = res.id
             console.log(refItem)
-            alert(`la orden ${refItem} se ha generado con exito`)
+            
+            swal({
+                title: "Felicidades",
+                text: `Tú orden ${refItem} se ha generado con exito`,
+                icon: "success",
+                button: "OK",
+            })
+            clear();
             });
         }
-    
     
     // agregar producto
 

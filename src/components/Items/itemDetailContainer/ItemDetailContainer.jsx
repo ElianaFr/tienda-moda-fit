@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import ItemDetail from "../itemDetail/ItemDetail";
-import stock from "../utils/stock.json"
 import { useParams } from "react-router-dom";
 import Spinner from "../spinner/spinner";
 import {getDoc,doc, getFirestore} from "firebase/firestore"

@@ -1,0 +1,26 @@
+.titulo{
+    letter-spacing: 1px;
+    font-family: 'Abril Fatface';
+}
+.iconArrow{
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+    
+}
+.iconCart{
+    font-size: 20px;
+    color: rgb(0, 60, 156);
+    border-radius:50%;
+    height: 80px;
+    width: 80px;
+    transition: background .4s;
+    
+    padding: 3px;
+}
+.iconCart:hover{
+    border-radius: 50%;
+    
+    background-color: #c1c1c1;
+    transition: background .4s;
+
+}

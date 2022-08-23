@@ -1,0 +1,27 @@
+.footer{
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    margin-top: 100px;
+    padding-top: 30px;
+}
+.icon{
+    color:aliceblue;
+    font-size: 30px;
+    margin: 10px;
+    
+}
+.footerPie{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(66, 65, 65);
+    
+}
+.pie{
+    color: aliceblue;
+    font-size: 8px;
+    padding-top: 18px;
+}
+.redes{
+    color: white;
+}

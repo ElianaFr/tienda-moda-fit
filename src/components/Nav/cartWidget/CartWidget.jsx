@@ -10,10 +10,13 @@ const CartWidget = () => {
         {cartItems.length === 0 ? (
             <></>
         ) : (
-        <span >
-            <i className="bi bi-bag-heart-fill cart" > {cantidad}             
-            </i>
-        </span>
+            
+                <span >
+                    <i className="bi bi-bag-heart-fill cart" > {cantidad}             
+                    </i>
+                </span>
+            
+            
         )}
         </>
     );

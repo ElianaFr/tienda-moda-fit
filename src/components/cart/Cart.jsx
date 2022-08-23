@@ -5,6 +5,7 @@ import CartItem from "../cartItem/CartItem";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import "../cart/cart.css"
 
 
 
@@ -13,7 +14,7 @@ const Cart = () => {
     
     const {cartItems,removeItem,clear,cantItems,sendOrder}= useContext(CartContext);
     
-    console.log("carrito",cartItems);
+    const [btnDisable,setBtnDisable] = useState(true)
 
     const [formValue,setFormValue]= useState({
         name:"",
@@ -43,23 +44,40 @@ const Cart = () => {
         <>
         {cartItems.length === 0 ? (
             <>
-                <h1>UPS!! PARECE QUE NO HAY PRODUCTOS</h1>
+                <h1 className="text-center mb-5 mt-5">UPS!! PARECE QUE NO HAY PRODUCTOS</h1>
             <Link to="/">
-                <button className="btn btn-primary m-5">HOME</button>
+                    <div className="col mx-auto contenedorBtn  ">
+                        <button className="btn btn-primary mb-5">HOME</button>
+                    </div>
             </Link>
             </>
         ) : (
             <>
-            <div className="container mb-5">
-                <p className="text-center fs-5">RESUMEN DE COMPRA</p>
-
+            <div className="container mt-5 mb-5">
+                <p className="text-center fs-5 mb-5 titulo">RESUMEN DE COMPRA</p>
+                
                 <button type="button" className="btn btn-secondary mb-5" onClick={()=> clear()}>VACIAR CARRITO</button>
-
+                
+            <div>   
+                <ul className="tabla">
+                    <li className="titLista">PRODUCTOS</li>
+                    <li className="titLista ps-4">PRECIO</li>
+                    <li className="titLista">CANTIDAD</li>
+                    <li className="titLista">TOTAL</li>
+                </ul>
+            </div>
+            <div className="container">
+                <hr className="linea"></hr>
+            </div>
                 {cartItems.map((item) => {
-                    return(<CartItem item={item.item} quantity = {item.quantity} clear={clear} removeItem={removeItem} />)
+
+                    return(
+                    <CartItem item={item.item} quantity = {item.quantity} clear={clear} removeItem={removeItem} />
+                    )
                 })}
-                <div className="container">
-                    <h3 className=" mt-5">{`TOTAL DE LA COMPRA : $ ${totalPrice}`} </h3>
+                
+                <div className="container mt-5 pt-5">
+                    <h3 className="mt-5 pt-5 mb-5 text-center">{`TOTAL DE LA COMPRA : $ ${totalPrice}`} </h3>
                     
                 </div>
 
@@ -89,6 +107,7 @@ const Cart = () => {
                             placeholder="Email"
                             onChange={handleChange}
                         />
+                        
                         <button 
                             type="submit" 
                             className="btn btn-secondary mt-4">ENVIAR PEDIDO

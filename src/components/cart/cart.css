@@ -1,0 +1,19 @@
+.contenedorBtn{
+    width: 50px;
+}
+.tabla{
+    list-style-type: none;
+}
+.titLista{
+    display: inline;
+    float:left;
+    text-align: justify;
+    width: 14.5em;
+    margin-bottom: 2px;
+    font-weight: 800;
+}
+.linea{
+    
+    width: 100%;
+    
+}
