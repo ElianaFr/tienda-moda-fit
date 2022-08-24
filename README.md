@@ -17,7 +17,7 @@ Una vez finaliza la compra, el usuario recibira el id de la orden de compra.
 - FIREBASE
 
 ## Screenshots
-<p> <img aling="center" src="https://github.com/ElianaFr/tienda-moda-fit/blob/main/modaFit.gif" width = "500" height="500"/></p>
+<p> <img aling="right" src="https://github.com/ElianaFr/tienda-moda-fit/blob/main/modaFit.gif" width = "800" height="500"/></p>
 
 
 
