@@ -63,12 +63,12 @@ const ItemDetail = ({productos,props}) => {
                                             
                                     </div>
                                     <div className="mt-4 mb-3">
-                                        <h5 className="text-uppercase mb-3 ">{product}</h5>
+                                        <h5 className="text-uppercase mb-3 product ">{product}</h5>
                                         <div className="d-flex flex-row align-items-center">
-                                            <span className=" mb-4 "> $ {price}.-</span>
+                                            <span className=" mb-4 price "> $ {price}.-</span>
                                         </div>
                                         
-                                        <p className="mb-4">{info}</p>    
+                                        <p className=" mb-4 info">{info}</p>    
                                     </div>
                                     <div className=" d-flex flex-row align-items-center">
                                             <span className=" mb-4">Cantidad seleccionada: {cantidad}</span>

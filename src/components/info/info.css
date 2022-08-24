@@ -1,0 +1,25 @@
+.infoPie{
+    background-color: rgb(210, 207, 207);
+    width: 100%;
+    height: 200px;
+}
+.infoList{
+    list-style-type: none;
+    padding-top: 60px;
+}
+.envio{
+    font-size: 40px;
+    padding: 5px;
+    border-radius: 110px;
+    border-style: double;
+    
+    
+}
+.list{
+    margin-right: 140px;
+    display: inline;
+}
+.text{
+    font-weight: 800;
+    margin:2px;
+}

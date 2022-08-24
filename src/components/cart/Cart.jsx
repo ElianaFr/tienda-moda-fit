@@ -14,7 +14,7 @@ const Cart = () => {
     
     const {cartItems,removeItem,clear,cantItems,sendOrder}= useContext(CartContext);
     
-    const [btnDisable,setBtnDisable] = useState(true)
+    
 
     const [formValue,setFormValue]= useState({
         name:"",
@@ -54,6 +54,9 @@ const Cart = () => {
         ) : (
             <>
             <div className="container mt-5 mb-5">
+                <p className="text-end protegida">
+                <i className="bi bi-shield-lock m-1"></i>
+                COMPRA PROTEGIDA</p>
                 <p className="text-center fs-5 mb-5 titulo">RESUMEN DE COMPRA</p>
                 
                 <button type="button" className="btn btn-secondary mb-5" onClick={()=> clear()}>VACIAR CARRITO</button>
@@ -86,7 +89,7 @@ const Cart = () => {
                         <input 
                             type="text" 
                             name="name"
-                            className="form-control m-2" 
+                            className="form-control m-2 " 
                             placeholder="Nombre"
                             value={formValue.name}
                             onChange={handleChange}

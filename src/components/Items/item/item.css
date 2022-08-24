@@ -18,3 +18,12 @@
     max-width: 60%; 
     margin:auto;
 }
+.card-title{
+    color: rgb(0, 0, 161);
+}
+.price{
+    font-weight: 700;
+}
+.cuotas{
+    font-size: smaller;
+}

@@ -24,3 +24,15 @@
     transition: background .4s;
 
 }
+.product{
+    font-size: larger;
+    color: rgb(55, 2, 106);
+}
+.price{
+    font-size: medium;
+    font-weight: 700;
+}
+.info{
+    font-size: medium;
+    font-weight: 500;
+}
