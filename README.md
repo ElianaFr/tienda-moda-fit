@@ -6,7 +6,7 @@
 # INFO
 La idea del proyecto es generar una app funcional, que el usuario ingrese a la pagina, vea los productos disponibles y que pueda ingresar a los detalles de los mismos.
 En el detalle, se mostrara una breve descripcion del producto, foto, precio y la posibilidad de agregar al carrito. 
-Una vez finaliza la compra, el usuario recibira el id de la orden de compra.
+Una vez finalizada la compra, el usuario recibira el id de la orden de compra.
 
 # RECURSOS UTILIZADOS
 
@@ -17,7 +17,7 @@ Una vez finaliza la compra, el usuario recibira el id de la orden de compra.
 - FIREBASE
 
 ## Screenshots
-
+<p> <img aling="right" src="https://github.com/ElianaFr/tienda-moda-fit/blob/main/modaFit.gif" width = "800" height="800"/></p>
 
 
 
